@@ -206,6 +206,10 @@ public class OperatingSystemTest {
 			"Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.21 (KHTML, like Gecko) Version/10.0 Mobile/15A5278f Safari/602.1"
 	};
 	
+	String[] iPhoneIos12 = {
+			"Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/604.1.21 (KHTML, like Gecko) Version/10.0 Mobile/15A5278f Safari/602.1"
+	};
+	
 	String[] iPods = {
 			"Mozilla/5.0 (iPod; U; CPU like Mac OS X; nl-nl) AppleWebKit/420.1 (KHTML, like Gecko)",
 			"Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko)",
@@ -502,6 +506,7 @@ public class OperatingSystemTest {
 		testAgents(iPhoneIos9, OperatingSystem.iOS9_IPHONE);
 		testAgents(iPhoneIos10, OperatingSystem.iOS10_IPHONE);
 		testAgents(iPhoneIos11, OperatingSystem.iOS11_IPHONE);
+		testAgents(iPhoneIos12, OperatingSystem.iOS12_IPHONE);
 		testAgents(iPods, OperatingSystem.MAC_OS_X_IPOD);
 		testAgents(iPadIos6, OperatingSystem.iOS6_IPAD);
 		testAgents(iPadIos7, OperatingSystem.iOS7_IPAD);

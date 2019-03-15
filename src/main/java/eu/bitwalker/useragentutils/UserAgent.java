@@ -71,9 +71,12 @@ public class UserAgent implements Serializable
 	private static final long serialVersionUID = 7025462762784240212L;
 	private OperatingSystem operatingSystem;
 	private Browser browser;
+	/**
+	 * TODO 增加手机型号的识别
+	 */
+	private Mobile mobile;
 	private int id;
 	private String userAgentString;
-		
 	
 	/**
 	 * This constructor is created for APIs that require default constructor 
@@ -83,14 +86,15 @@ public class UserAgent implements Serializable
 	@Deprecated
 	public UserAgent() 
 	{
-		this(OperatingSystem.UNKNOWN, Browser.UNKNOWN);
+		this(OperatingSystem.UNKNOWN, Browser.UNKNOWN, Mobile.UNKNOWN);
 	}
 	
-	public UserAgent(OperatingSystem operatingSystem, Browser browser)
+	public UserAgent(OperatingSystem operatingSystem, Browser browser, Mobile mobile)
 	{
 		this.operatingSystem = operatingSystem;
 		this.browser = browser;
-		this.id = (( operatingSystem.getId() << 16) + browser.getId());
+		this.mobile = mobile;
+		this.id = (( operatingSystem.getId() << 16) +(mobile.getId() << 8)+ browser.getId());
 	}
 	
     public UserAgent(String userAgentString)
@@ -104,9 +108,11 @@ public class UserAgent implements Serializable
         if (browser != Browser.BOT)
             operatingSystem = OperatingSystem.parseUserAgentLowercaseString(userAgentLowercaseString);
 
+        Mobile mobile = Mobile.parseUserAgentLowercaseString(userAgentLowercaseString);
+        this.mobile = mobile;
         this.operatingSystem = operatingSystem;
         this.browser = browser;
-        this.id = ((operatingSystem.getId() << 16) + browser.getId());
+        this.id = ((operatingSystem.getId() << 16) +(mobile.getId() << 8)+ browser.getId());
         this.userAgentString = userAgentString;
     }
 
@@ -143,6 +149,13 @@ public class UserAgent implements Serializable
 	public Browser getBrowser() {
 		return browser;
 	}
+	
+	/**
+	 * @return the mobile
+	 */
+	public Mobile getMobile() {
+		return mobile;
+	}
 
 	/**
 	 * Returns an unique integer value of the operating system and browser combination
@@ -156,7 +169,8 @@ public class UserAgent implements Serializable
 	 * Combined string representation of both enums
 	 */
 	public String toString() {
-		return this.operatingSystem.toString() + "-" + this.browser.toString();
+		return this.operatingSystem.toString() + "-" + this.browser.toString()
+		       + "-" + this.mobile.toString();
 	}
 	
 	/**
@@ -167,8 +181,9 @@ public class UserAgent implements Serializable
 	public static UserAgent valueOf(int id)
 	{
 		OperatingSystem operatingSystem = OperatingSystem.valueOf((short) (id >> 16));
+		Mobile mobile = Mobile.valueOf((short)(id >> 8));
 		Browser browser = Browser.valueOf( (short) (id & 0x0FFFF));
-		return new UserAgent(operatingSystem,browser);
+		return new UserAgent(operatingSystem,browser,mobile);
 	}
 	
 	/**
@@ -183,11 +198,12 @@ public class UserAgent implements Serializable
 		
 		String[] elements = name.split("-");
 		
-		if (elements.length == 2)
+		if (elements.length == 3)
 		{
 			OperatingSystem operatingSystem = OperatingSystem.valueOf(elements[0]);
 			Browser browser = Browser.valueOf(elements[1]);
-			return new UserAgent(operatingSystem,browser);
+			Mobile mobile = Mobile.valueOf(elements[2]);
+			return new UserAgent(operatingSystem,browser,mobile);
 		}
 		
 		throw new IllegalArgumentException(
@@ -205,6 +221,8 @@ public class UserAgent implements Serializable
 		result = prime * result + id;
 		result = prime * result
 				+ ((operatingSystem == null) ? 0 : operatingSystem.hashCode());
+		result = prime * result
+				+ ((mobile == null) ? 0 : mobile.hashCode());
 		return result;
 	}
 
@@ -231,6 +249,11 @@ public class UserAgent implements Serializable
 			if (other.operatingSystem != null)
 				return false;
 		} else if (!operatingSystem.equals(other.operatingSystem))
+			return false;
+		if (mobile == null) {
+			if (other.mobile != null)
+				return false;
+		} else if (!mobile.equals(other.mobile))
 			return false;
 		return true;
 	}

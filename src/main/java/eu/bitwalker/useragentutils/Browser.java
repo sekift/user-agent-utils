@@ -50,7 +50,35 @@ import eu.bitwalker.useragentutils.browser.SafariUtils;
  */
 
 public enum Browser {
-
+	
+	/**
+	 * QQ浏览器
+	 * Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6776.400 QQBrowser/10.3.2601.400
+	 */
+	QQ(	Manufacturer.TENCENT, null, 100, "QQBrowser", new String[] {"QQBrowser"}, null, BrowserType.WEB_BROWSER, RenderingEngine.GECKO, new PatternBasedVersionFetcher("QQBrowser\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	    QQ10(	Manufacturer.TENCENT, Browser.QQ, 1, "QQBrowser", new String[] {"QQBrowser"}, null, BrowserType.WEB_BROWSER, RenderingEngine.GECKO, null), // 10 version
+	
+	/**
+	 * UC浏览器
+	 * Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 UBrowser/4.0.3214.0 Safari/537.36
+	 */
+	UC(	Manufacturer.ALIBABA, null, 100, "UCBrowser", new String[] {"UBrowser", "UCBrowser"}, null, BrowserType.WEB_BROWSER, RenderingEngine.GECKO, new PatternBasedVersionFetcher("(?:UBrowser|UCBrowser)\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	    UC4(	Manufacturer.ALIBABA, Browser.UC, 1, "UCBrowser", new String[] {"UBrowser", "UCBrowser"}, null, BrowserType.WEB_BROWSER, RenderingEngine.GECKO, null), // 4 version
+	
+	/**
+	 * 淘宝浏览器
+	 * Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.11 TaoBrowser/2.0 Safari/536.11
+	 */
+	TAOBAO(	Manufacturer.ALIBABA, null, 100, "TaoBrowser", new String[] {"TaoBrowser", "TBrowser"}, null, BrowserType.WEB_BROWSER, RenderingEngine.GECKO, new PatternBasedVersionFetcher("(?:TaoBrowser|TBrowser)\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	  TAOBAO2(	Manufacturer.ALIBABA, Browser.TAOBAO, 1, "TaoBrowser", new String[] {"TaoBrowser", "TBrowser"}, null, BrowserType.WEB_BROWSER, RenderingEngine.GECKO, null), // 4 version
+	
+	/**
+	 * 遨游浏览器
+	 * Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.3.4000 Chrome/30.0.1599.101 Safari/537.36
+	 */
+	 MAXTHON(	Manufacturer.MAXTHON, null, 100, "Maxthon", new String[] {"Maxthon"}, null, BrowserType.WEB_BROWSER, RenderingEngine.GECKO, new PatternBasedVersionFetcher("Maxthon\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	   MAXTHON4(	Manufacturer.MAXTHON, Browser.MAXTHON, 1, "Maxthon", new String[] {"Maxthon"}, null, BrowserType.WEB_BROWSER, RenderingEngine.GECKO, null), // 4 version
+		
 	/**
 	 * Outlook email client
 	 */

@@ -140,8 +140,19 @@ public enum Manufacturer {
 	/**
 	 * Linux Foundation, owner of the Tizen Project
 	 */
-	LINUX_FOUNDATION(26,"Linux Foundation");
-	
+	LINUX_FOUNDATION(26,"Linux Foundation"),
+	/**
+	 *  Tencent.
+	 */
+	TENCENT(27, "Tencent."),
+	/**
+	 * Alibaba Group
+	 */
+	ALIBABA(28, "Alibaba Group"),
+	/**
+	 * Maxthon浏览器
+	 */
+	MAXTHON(29, "Maxthon USA Inc.");
 	
 	
 	private final short id;
