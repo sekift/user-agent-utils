@@ -10,39 +10,38 @@ https://github.com/HaraldWalker/user-agent-utils/tree/master
 
 本人的版本
 -----------
-使用：
-UserAgent userAgent = UserAgent.parseUserAgentString("Mozilla/5.0 (Linux; U; Android 5.1.1; zh-cn; SM-G6000 Build/LMY47X) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/1.0.0.100 U3/0.8.0 Mobile Safari/534.30 AliApp(TB/6.2.3) WindVane/8.0.0 720X1280 GCanvas/1.4.2.21");
-System.out.println("浏览器名:" + userAgent.getBrowser().getName());
-System.out.println("浏览器类型:" + userAgent.getBrowser().getBrowserType());
-System.out.println("浏览器家族:" + userAgent.getBrowser().getGroup());
-System.out.println("浏览器生产厂商:" + userAgent.getBrowser().getManufacturer());
-System.out.println("浏览器使用的渲染引擎:" + userAgent.getBrowser().getRenderingEngine());
-System.out.println("浏览器版本:" + userAgent.getBrowserVersion());
-System.out.println("操作系统名:" + userAgent.getOperatingSystem().getName());
-System.out.println("操作系统类型:" + userAgent.getOperatingSystem().getDeviceType());
-System.out.println("操作系统家族:" + userAgent.getOperatingSystem().getGroup());
-System.out.println("操作系统生产厂商:" + userAgent.getOperatingSystem().getManufacturer().toString());
-System.out.println("手机生产厂商:" + userAgent.getMobile().getMobileBrand().getName());
-System.out.println("手机家族:" + userAgent.getMobile().getGroup());
-System.out.println("手机识别码:" + userAgent.getMobile().getMobileId());
-System.out.println("手机型号:" + userAgent.getMobile().getName());
-
-结果：
-浏览器名:UCBrowser
-浏览器类型:WEB_BROWSER
-浏览器家族:UC
-浏览器生产厂商:ALIBABA
-浏览器使用的渲染引擎:GECKO
-浏览器版本:1.0.0.100
-操作系统名:Android 5.x
-操作系统类型:MOBILE
-操作系统家族:ANDROID
-操作系统生产厂商:GOOGLE
-手机生产厂商:三星
-手机家族:SAMSUNG
-手机识别码:sm-g6000 build/lmy47x
-手机型号:三星 Galaxy On7
-
+使用：<br />
+UserAgent userAgent = UserAgent.parseUserAgentString("Mozilla/5.0 (Linux; U; Android 5.1.1; zh-cn; SM-G6000 Build/LMY47X) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/1.0.0.100 U3/0.8.0 Mobile Safari/534.30 AliApp(TB/6.2.3) WindVane/8.0.0 720X1280 GCanvas/1.4.2.21");<br />
+System.out.println("浏览器名:" + userAgent.getBrowser().getName());<br />
+System.out.println("浏览器类型:" + userAgent.getBrowser().getBrowserType());<br />
+System.out.println("浏览器家族:" + userAgent.getBrowser().getGroup());<br />
+System.out.println("浏览器生产厂商:" + userAgent.getBrowser().getManufacturer());<br />
+System.out.println("浏览器使用的渲染引擎:" + userAgent.getBrowser().getRenderingEngine());<br />
+System.out.println("浏览器版本:" + userAgent.getBrowserVersion());<br />
+System.out.println("操作系统名:" + userAgent.getOperatingSystem().getName());<br />
+System.out.println("操作系统类型:" + userAgent.getOperatingSystem().getDeviceType());<br />
+System.out.println("操作系统家族:" + userAgent.getOperatingSystem().getGroup());<br />
+System.out.println("操作系统生产厂商:" + userAgent.getOperatingSystem().getManufacturer().toString());<br />
+System.out.println("手机生产厂商:" + userAgent.getMobile().getMobileBrand().getName());<br />
+System.out.println("手机家族:" + userAgent.getMobile().getGroup());<br />
+System.out.println("手机识别码:" + userAgent.getMobile().getMobileId());<br />
+System.out.println("手机型号:" + userAgent.getMobile().getName());<br />
+<br />
+结果：<br />
+浏览器名:UCBrowser<br />
+浏览器类型:WEB_BROWSER<br />
+浏览器家族:UC<br />
+浏览器生产厂商:ALIBABA<br />
+浏览器使用的渲染引擎:GECKO<br />
+浏览器版本:1.0.0.100<br />
+操作系统名:Android 5.x<br />
+操作系统类型:MOBILE<br />
+操作系统家族:ANDROID<br />
+操作系统生产厂商:GOOGLE<br />
+手机生产厂商:三星<br />
+手机家族:SAMSUNG<br />
+手机识别码:sm-g6000 build/lmy47x<br />
+手机型号:三星 Galaxy On7<br />
 
 EOL WARNING
 -----------
