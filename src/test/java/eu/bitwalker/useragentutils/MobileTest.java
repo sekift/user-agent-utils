@@ -22,7 +22,7 @@ public class MobileTest {
 	 */
 	@Test
 	public void testParseMobileString() {
-		UserAgent userAgent = UserAgent.parseUserAgentString("Mozilla/5.0 (Linux; U; Android 5.1.1; zh-cn; SM-G6000 Build/LMY47X) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/1.0.0.100 U3/0.8.0 Mobile Safari/534.30 AliApp(TB/6.2.3) WindVane/8.0.0 720X1280 GCanvas/1.4.2.21");
+		UserAgent userAgent = UserAgent.parseUserAgentString("Mozilla/5.0 (Linux; U; Android 6.0; zh-CN; PLK-TL01H Build/HONORPLK-TL01H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.0.2214.89 UCBrowser/11.4.8.938 Mobile Safari/537.36");
 		//assertEquals(OperatingSystem.WINDOWS_7, userAgent.getOperatingSystem());
 		//assertEquals(Browser.TAOBAO2, userAgent.getBrowser());
 		System.out.println("浏览器名:" + userAgent.getBrowser().getName());
