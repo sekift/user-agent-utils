@@ -39,6 +39,8 @@ public class MobileTest {
 		System.out.println("手机家族:" + userAgent.getMobile().getGroup());
 		System.out.println("手机识别码:" + userAgent.getMobile().getMobileId());
 		System.out.println("手机型号:" + userAgent.getMobile().getName());
+		System.out.println("手机屏幕尺寸:" + userAgent.getMobile().getScreenSize().getName());
+		System.out.println("手机屏幕分辨率:" + userAgent.getMobile().getResolution().getName());
 	}
 	
 	/**

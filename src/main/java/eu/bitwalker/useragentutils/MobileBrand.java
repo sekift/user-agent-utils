@@ -46,7 +46,7 @@ package eu.bitwalker.useragentutils;
  */
 public enum MobileBrand {
 	
-	QIHU(1, "360"),
+	QIKU(1, "360"),
 	PHONE8848(2, "8848"),
 	HTC(3, "HTC"),
 	KINDLE(4, "Kindle"),
@@ -59,7 +59,7 @@ public enum MobileBrand {
 	TCL(11, "TCL"),
 	VIVO(12, "vivo"),
 	YOTA(13, "Yota"),
-	ZUG(14, "ZUG"),
+	MANN(14, "MANN"),
 	ZUK(15, "ZUK"),
 	ONDA(16, "昂达"),
 	AOCOS(17, "奥可视"),
