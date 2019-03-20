@@ -26,6 +26,8 @@ System.out.println("手机生产厂商:" + userAgent.getMobile().getMobileBrand(
 System.out.println("手机家族:" + userAgent.getMobile().getGroup());<br />
 System.out.println("手机识别码:" + userAgent.getMobile().getMobileId());<br />
 System.out.println("手机型号:" + userAgent.getMobile().getName());<br />
+System.out.println("手机屏幕尺寸:" + userAgent.getMobile().getScreenSize().getName());<br />
+System.out.println("手机屏幕分辨率:" + userAgent.getMobile().getResolution().getName());<br />
 <br />
 结果：<br />
 浏览器名:UCBrowser<br />
@@ -42,6 +44,8 @@ System.out.println("手机型号:" + userAgent.getMobile().getName());<br />
 手机家族:SAMSUNG<br />
 手机识别码:sm-g6000 build/lmy47x<br />
 手机型号:三星 Galaxy On7<br />
+手机屏幕尺寸:5.5<br />
+手机屏幕分辨率:720x1280<br />
 
 EOL WARNING
 -----------
@@ -125,6 +129,9 @@ http://www.bitwalker.eu/contact
 
 Changelog
 ---------
+2019-03-20 版本
+- 1、添加识别手机屏幕尺寸和分辨率功能。
+
 2019-03-15 版本
 - 1、增加对UC、QQ、淘宝等多款浏览器的支持
 - 2、添加识别手机型号的功能，现共能识别多达1300多款手机。
