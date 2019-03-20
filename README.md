@@ -22,12 +22,13 @@ System.out.println("操作系统名:" + userAgent.getOperatingSystem().getName()
 System.out.println("操作系统类型:" + userAgent.getOperatingSystem().getDeviceType());<br />
 System.out.println("操作系统家族:" + userAgent.getOperatingSystem().getGroup());<br />
 System.out.println("操作系统生产厂商:" + userAgent.getOperatingSystem().getManufacturer().toString());<br />
-System.out.println("手机生产厂商:" + userAgent.getMobile().getMobileBrand().getName());<br />
-System.out.println("手机家族:" + userAgent.getMobile().getGroup());<br />
-System.out.println("手机识别码:" + userAgent.getMobile().getMobileId());<br />
 System.out.println("手机型号:" + userAgent.getMobile().getName());<br />
 System.out.println("手机屏幕尺寸:" + userAgent.getMobile().getScreenSize().getName());<br />
 System.out.println("手机屏幕分辨率:" + userAgent.getMobile().getResolution().getName());<br />
+System.out.println("手机识别码:" + userAgent.getMobile().getMobileId());<br />
+System.out.println("手机固件版本:" + userAgent.getMobile().getMobileVersion());<br />
+System.out.println("手机生产厂商:" + userAgent.getMobile().getMobileBrand().getName());<br />
+System.out.println("手机家族:" + userAgent.getMobile().getGroup());<br />
 <br />
 结果：<br />
 浏览器名:UCBrowser<br />
@@ -40,12 +41,13 @@ System.out.println("手机屏幕分辨率:" + userAgent.getMobile().getResolutio
 操作系统类型:MOBILE<br />
 操作系统家族:ANDROID<br />
 操作系统生产厂商:GOOGLE<br />
-手机生产厂商:三星<br />
-手机家族:SAMSUNG<br />
-手机识别码:sm-g6000 build/lmy47x<br />
 手机型号:三星 Galaxy On7<br />
 手机屏幕尺寸:5.5<br />
 手机屏幕分辨率:720x1280<br />
+手机识别码:sm-g6000<br />
+手机固件版本:lmy47x<br />
+手机生产厂商:三星<br />
+手机家族:SAMSUNG<br />
 
 EOL WARNING
 -----------

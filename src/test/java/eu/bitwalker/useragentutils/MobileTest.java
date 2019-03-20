@@ -35,12 +35,14 @@ public class MobileTest {
 		System.out.println("操作系统类型:" + userAgent.getOperatingSystem().getDeviceType());
 		System.out.println("操作系统家族:" + userAgent.getOperatingSystem().getGroup());
 		System.out.println("操作系统生产厂商:" + userAgent.getOperatingSystem().getManufacturer().toString());
-		System.out.println("手机生产厂商:" + userAgent.getMobile().getMobileBrand().getName());
-		System.out.println("手机家族:" + userAgent.getMobile().getGroup());
-		System.out.println("手机识别码:" + userAgent.getMobile().getMobileId());
 		System.out.println("手机型号:" + userAgent.getMobile().getName());
 		System.out.println("手机屏幕尺寸:" + userAgent.getMobile().getScreenSize().getName());
 		System.out.println("手机屏幕分辨率:" + userAgent.getMobile().getResolution().getName());
+		System.out.println("手机识别码:" + userAgent.getMobile().getMobileId());
+		System.out.println("手机固件版本:" + userAgent.getMobile().getMobileVersion());
+		System.out.println("手机生产厂商:" + userAgent.getMobile().getMobileBrand().getName());
+		System.out.println("手机家族:" + userAgent.getMobile().getGroup());
+
 	}
 	
 	/**

@@ -1417,6 +1417,7 @@ public enum Mobile {
 	private static List<Mobile> topLevelBrowsers;
 
 	private String mobileId = "UNKNOWN"; // 手机识别码
+	private String mobileVersion = "UNKNOWN"; //手机版本号
 	
 	private final ScreenSizeType screenSize; // 屏幕尺寸
 	private final ResolutionType resolution; //屏幕分辨率
@@ -1455,6 +1456,10 @@ public enum Mobile {
 	
 	public String getMobileId() {
 		return mobileId;
+	}
+	
+	public String getMobileVersion() {
+		return mobileVersion;
 	}
 	
 	public ScreenSizeType getScreenSize() {
@@ -1502,12 +1507,16 @@ public enum Mobile {
     private Mobile checkUserAgentLowercase(String agentLowercaseString) {
         if (this.isInUserAgentLowercaseString(agentLowercaseString)) {
             
-        	for (String aliase : aliases) {
-            	if(agentLowercaseString.contains(aliase)){
-            		this.mobileId = aliase;
-            		break;
-            	}
-            }
+			for (String aliase : aliases) {
+				if (agentLowercaseString.contains(aliase)) {
+					String[] arr = aliase.split("/");
+					this.mobileId = arr[0].replace(" build", "").trim();
+					if (arr.length > 1) {
+						this.mobileVersion = arr[1].trim();
+					}
+					break;
+				}
+			}
             
             if (this.children.size() > 0) {
                 for (Mobile childMobile : this.children) {
